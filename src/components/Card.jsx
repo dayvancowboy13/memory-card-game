@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const log = console.log;
 
-export default function Card({ imageURL, cardTitle }) {
+export default function Card({ imageURL, cardTitle, onClick }) {
     const [clicked, setClicked] = useState(false)
     // console.log(imageURL);
 
@@ -14,6 +14,7 @@ export default function Card({ imageURL, cardTitle }) {
         !clicked ?
             setClicked(true) : setClicked(false);
         log(clicked)
+        onClick();
     }
 
     return (
