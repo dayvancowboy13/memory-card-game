@@ -1,0 +1,12 @@
+.card {
+    max-width: 100px;
+    max-height: auto;
+    margin: 5px;
+    padding: 1em;
+
+    border-radius: var(--default-border-radius);
+}
+
+.card img {
+    max-width: 100%;
+}
