@@ -18,21 +18,21 @@ const shuffleDeck = function () {
         .sort((a, b) => a.sort - b.sort)
         .map((a) => a.value);
 
-    log(randomizedNumbers);
     return (randomizedNumbers);
-    //setDeck(randomizedNumbers);
 }
 
 export default function GameBoard() {
     // deck is an array of the shuffled "cards"
 
-    const [deck, setDeck] = useState(shuffleDeck());
+    const [deck, setDeck] = useState(shuffleDeck);
+    const [clickedCards, setClickedCards] = useState(Array(characters.length).fill(false, 0))
+    const [count, setCount] = useState(0);
 
 
+    log(clickedCards)
 
-    // put the card ids into a state
-    // shuffle those
-    // use that array to place the cards on the board
+    log(count);
+    log(deck);
 
     return (
         <div className='board'>
@@ -41,11 +41,16 @@ export default function GameBoard() {
                 return (
                     <>
                         <Card
+                            id={index}
                             key={characters[index].name}
                             imageURL={characters[index].url}
                             cardTitle={characters[index].name}
-                            onClick={() =>
-                                setDeck(shuffleDeck)
+                            clicked={clickedCards[index]}
+                            onClick={(cardId) => {
+                                setDeck(shuffleDeck);
+                                setCount(() => count + 1);
+                                setClickedCards(...clickedCards[cardId] = true);
+                            }
                             } />
                     </>)
 

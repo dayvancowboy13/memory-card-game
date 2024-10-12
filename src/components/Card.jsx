@@ -3,28 +3,27 @@ import { useState } from 'react';
 
 const log = console.log;
 
-export default function Card({ imageURL, cardTitle, onClick }) {
-    const [clicked, setClicked] = useState(false)
+export default function Card({ id, imageURL, cardTitle, clicked, onClick }) {
+    // const [clicked, setClicked] = useState(false)
+    // const [bgColor, setBGColor] = useState('red')
     // console.log(imageURL);
 
-    function handleClick(e) {
+    function handleClick() {
         log(`${cardTitle} clicked`);
         log('shuffling cards');
-        log('updating state');
-        !clicked ?
-            setClicked(true) : setClicked(false);
-        log(clicked)
-        onClick();
+        log('updating states');
+
+        onClick(id);
     }
 
     return (
         <div key={cardTitle} className="card"
-            style={clicked ? { backgroundColor: 'green' } : { backgroundColor: 'red' }
-            }>
+            style={clicked ? { backgroundColor: 'green' } : { backgroundColor: 'red' }}
+        >
             <button
-                onClick={e => handleClick(e)}>
+                onClick={handleClick}>
                 <img src={imageURL} />
-                <h3>{cardTitle}</h3>
+                <h3>{id} {cardTitle}</h3>
             </button>
         </div >
     )
