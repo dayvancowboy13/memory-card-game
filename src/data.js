@@ -9,12 +9,12 @@ const characters = [{
     url: 'src/assets/wind-waker-images/aryll.jpg'
 },
 {
-    id: 3,
+    id: 2,
     name: 'Tetra',
     url: 'src/assets/wind-waker-images/tetra.jpg'
 },
 {
-    id: 4,
+    id: 3,
     name: 'Zelda',
     url: 'src/assets/wind-waker-images/zelda.jpg'
 },

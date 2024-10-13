@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Card from './Card';
 import { characters } from '../data';
+import Card from './Card';
 import './style/GameBoard.css'
 
 const log = console.log;
@@ -33,7 +33,9 @@ export default function GameBoard() {
         if (!clickedCards[id]) {
             setDeck(shuffleDeck);
             setScore(() => score + 1);
-            setClickedCards(...clickedCards[id] = true);
+            const newClickedCards = [...clickedCards]
+            newClickedCards[id] = true;
+            setClickedCards(newClickedCards);
         } else {
             log('already clicked that card; resetting')
             score > highScore ?
@@ -43,11 +45,39 @@ export default function GameBoard() {
 
             // reset clicked
             setClickedCards(Array(characters.length).fill(false, 0))
+            setDeck(shuffleDeck);
         }
     }
 
-    // log(count);
-    // log(deck);
+    function allCardsClicked() {
+        for (let i = 0; i < clickedCards.length; i++) {
+            if (!clickedCards[i]) return false
+        }
+        return true;
+    }
+
+    if (allCardsClicked()) {
+        log("You win!!")
+        // show game over screen
+        return (
+            <div className="win-screen">
+
+                <h2>Game Over! You win!</h2>
+                <button
+                    onClick={() => {
+                        log('resetting game')
+                        setHighScore(score)
+                        setScore(0);
+                        setClickedCards(Array(characters.length).fill(false, 0))
+                        setDeck(shuffleDeck);
+                    }}>
+                    Reset?</button>
+
+            </div>
+        )
+    }
+
+
 
     return (
         <>
@@ -61,8 +91,8 @@ export default function GameBoard() {
                     return (
                         <>
                             <Card
+                                key={characters[index].id}
                                 id={index}
-                                key={characters[index].name}
                                 imageURL={characters[index].url}
                                 cardTitle={characters[index].name}
                                 clicked={clickedCards[index]}

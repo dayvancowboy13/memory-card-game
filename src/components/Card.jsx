@@ -10,8 +10,7 @@ export default function Card({ id, imageURL, cardTitle, clicked, onClick }) {
 
     function handleClick() {
         log(`${cardTitle} clicked`);
-        log('shuffling cards');
-        log('updating states');
+        log('shuffling cards and updating states');
 
         onClick(id);
     }

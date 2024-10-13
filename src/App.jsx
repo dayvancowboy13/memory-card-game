@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div id='app'>
-      <h1>Play the Memory Game!</h1>
+      {/* <h1>Play the Memory Game!</h1> */}
       <GameBoard />
     </div>
   )
