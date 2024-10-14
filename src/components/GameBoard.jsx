@@ -23,7 +23,6 @@ const shuffleDeck = function () {
 
 export default function GameBoard() {
     // deck is an array of the shuffled "cards"
-
     const [deck, setDeck] = useState(shuffleDeck);
     const [clickedCards, setClickedCards] = useState(Array(characters.length).fill(false, 0))
     const [score, setScore] = useState(0);
@@ -71,7 +70,7 @@ export default function GameBoard() {
                         setClickedCards(Array(characters.length).fill(false, 0))
                         setDeck(shuffleDeck);
                     }}>
-                    Reset?</button>
+                    Play Again</button>
 
             </div>
         )
