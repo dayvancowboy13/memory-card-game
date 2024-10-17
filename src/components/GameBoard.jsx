@@ -21,12 +21,12 @@ const shuffleDeck = function () {
     return (randomizedNumbers);
 }
 
-export default function GameBoard({ difficulty, onClick }) {
+export default function GameBoard({
+    difficulty, onClick, setHighScore, highScore, score, setScore }) {
     // deck is an array of the shuffled "cards"
     const [deck, setDeck] = useState(shuffleDeck);
     const [clickedCards, setClickedCards] = useState(Array(characters.length).fill(false, 0))
-    const [score, setScore] = useState(0);
-    const [highScore, setHighScore] = useState(0);
+
 
     function checkClickedCard(id) {
         if (!clickedCards[id]) {
@@ -83,10 +83,6 @@ export default function GameBoard({ difficulty, onClick }) {
 
     return (
         <>
-            <div className='scores'>
-                <h2>Current Score: {score}</h2>
-                <h2>High Score: {highScore}</h2>
-            </div>
             <div className='board'>
                 {deck.map((index) => {
                     return (
