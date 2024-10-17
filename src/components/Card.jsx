@@ -14,14 +14,14 @@ export default function Card({ id, imageURL, cardTitle, clicked, onClick }) {
     }
 
     return (
-        <div key={cardTitle} className="card"
-            style={clicked ? { backgroundColor: 'green' } : { backgroundColor: 'red' }}
-        >
-            <button
+        <>
+            <button key={id} className="card"
+                style={clicked ? { backgroundColor: 'green' } : { backgroundColor: 'red' }}
                 onClick={handleClick}>
-                <img src={imageURL} />
+
+                <img className='card-image' src={imageURL} />
                 <h2>{id} {cardTitle}</h2>
-            </button>
-        </div >
+            </button >
+        </>
     )
 }

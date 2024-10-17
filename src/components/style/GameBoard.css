@@ -3,11 +3,17 @@
     grid-template-columns: repeat(4, 1fr);
     grid-auto-columns: 1fr;
     background-color: aliceblue;
+    width: 85%;
+    align-self: center;
 
     border-radius: var(--default-border-radius);
     padding: 1em;
 
+    justify-self: center;
     justify-items: center;
+
+    box-shadow: 0 0 10px;
+
 }
 
 .scores {

@@ -1,4 +1,8 @@
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 150px;
     max-height: auto;
     margin: 5px;
@@ -8,5 +12,16 @@
 }
 
 .card img {
-    max-width: 100%;
+    /* max-width: 100%; */
 }
+
+.card-image {
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
+    border: 1px black solid;
+}
+
+/* button {
+    max-height: 100%;
+} */

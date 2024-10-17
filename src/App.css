@@ -1,14 +1,30 @@
 #root {
-  width: 70vw;
+
+  width: 80vw;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
   background-color: #008ab0;
+  border-radius: var(--default-border-radius);
+  box-shadow: 0 0 10px;
+
 }
 
 #app {
   /* max-width: 85vw; */
+  display: grid;
 }
+
+.difficulty-selector {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-item button {
+  margin: 6px;
+}
+
+
 
 .logo {
   height: 6em;
