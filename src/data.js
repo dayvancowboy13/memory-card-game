@@ -18,6 +18,26 @@ const characters = [{
     name: 'Zelda',
     url: 'src/assets/wind-waker-images/zelda.jpg'
 },
+{
+    id: 4,
+    name: 'Manny',
+    url: 'src/assets/wind-waker-images/manny.jpg'
+},
+{
+    id: 5,
+    name: 'Grandma',
+    url: 'src/assets/wind-waker-images/grandma.jpg'
+},
+{
+    id: 6,
+    name: 'Mokko',
+    url: 'src/assets/wind-waker-images/moko.jpg'
+},
+{
+    id: 7,
+    name: 'Tingle',
+    url: 'src/assets/wind-waker-images/tingle.jpg'
+},
 ];
 
 export { characters }
