@@ -3,8 +3,6 @@ import './App.css'
 import GameBoard from './components/GameBoard';
 import DifficultySelector from './components/DifficultySelector';
 
-
-
 function App() {
   const [difficulty, setDifficulty] = useState(null);
   const [highScore, setHighScore] = useState(0);
@@ -18,7 +16,7 @@ function App() {
 
   return (
     <div id='app'>
-      <h1>Play the Memory Game!</h1>
+      <h1>Wind Waker Memory Game!</h1>
       {difficulty === null ?
         <DifficultySelector onClick={onClick} /> : (
           <>

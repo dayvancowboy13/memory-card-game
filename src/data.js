@@ -40,4 +40,32 @@ const characters = [{
 },
 ];
 
-export { characters }
+const loseGifs = [{
+    id: 0,
+    gif_ID: 'YAa6eYva5IMEw',
+    desc: "sleepy"
+}, {
+    id: 1,
+    gif_ID: 'fe3NDdz8tl6Vwm4xbr',
+    desc: "shock"
+}, {
+    id: 2,
+    gif_ID: 'J2OrcTuxgUZc4',
+    desc: 'shifty eyes'
+}];
+
+const winGifs = [{
+    id: 0,
+    gif_ID: '2UHbv8WT6TKBeeP9Mt',
+    desc: "happy surprise"
+}, {
+    id: 1,
+    gif_ID: 'YCvlqAuAaNqqQ',
+    desc: 'smile and wave'
+}, {
+    id: 2,
+    gif_ID: '623GsYzT908Z63VOs1',
+    desc: 'jumping excitement'
+}]
+
+export { characters, loseGifs, winGifs }
