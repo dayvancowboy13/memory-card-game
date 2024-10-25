@@ -5,29 +5,80 @@ import './style/GameBoard.css'
 import GameOverImage from './GameOverImage';
 
 const log = console.log;
-const shuffleDeck = function () {
+const difficultyParameters = {
+    'easy': 5,
+    'medium': 8,
+    'hard': 12
+};
+const shuffleDeck = function (deck) {
 
     log('shuffling deck')
-    let randomizedNumbers = [];
-    let tempArray = [];
 
-    for (let i = 0; i < characters.length; i++) {
-        tempArray.push(i);
+    let i = deck.length;
+    let j = 0;
+    let temp;
+
+    while (i--) {
+        j = Math.floor(Math.random() * i);
+
+        temp = deck[i];
+        deck[i] = deck[j];
+        deck[j] = temp;
+
     }
 
-    randomizedNumbers = tempArray.map((a) => ({ sort: Math.random(), value: a }))
-        .sort((a, b) => a.sort - b.sort)
-        .map((a) => a.value);
+    return deck;
+    // let randomizedNumbers = [];
+    // let tempArray = [];
 
-    return (randomizedNumbers);
+    // for (let i = 0; i < characters.length; i++) {
+    //     tempArray.push(i);
+    // }
+
+    // randomizedNumbers = tempArray.map((a) => ({ sort: Math.random(), value: a }))
+    //     .sort((a, b) => a.sort - b.sort)
+    //     .map((a) => a.value);
+
+    // return (randomizedNumbers);
+}
+
+const loadDeck = function (numberOfCards) {
+    // generate x random numbers corresponding to the difficulty
+    log(`Pulling ${numberOfCards} into the deck`)
+
+    let indexArray = []
+    let i = characters.length;
+    let j = 0;
+    let temp;
+
+    // create array with enough indeces for all characters
+    for (let k = 0; k < characters.length; k++) {
+        indexArray.push(k);
+    }
+
+    while (i--) {
+        j = Math.floor(Math.random() * i);
+
+        temp = indexArray[i];
+        indexArray[i] = indexArray[j];
+        indexArray[j] = temp;
+    }
+
+    return indexArray.slice(0, numberOfCards);
 }
 
 export default function GameBoard({
     difficulty, onClick, setHighScore, highScore, score, setScore }) {
     // deck is an array of the shuffled "cards"
-    const [deck, setDeck] = useState(shuffleDeck);
-    const [clickedCards, setClickedCards] = useState(Array(characters.length).fill(false, 0));
+    const [deck, setDeck] = useState(loadDeck(difficultyParameters[difficulty]));
+    // an array of the indeces of cards which have been clicked
+    const [clickedCards, setClickedCards] = useState([]);
     const [showEndScreen, setShowEndScreen] = useState(false);
+
+
+
+    log(deck)
+    log(clickedCards)
 
     function EndScreen({ outcome }) {
         return (
@@ -41,7 +92,7 @@ export default function GameBoard({
                         setHighScore(score)
                         setScore(0);
                         setClickedCards(Array(characters.length).fill(false, 0))
-                        setDeck(shuffleDeck);
+                        setDeck(shuffleDeck(deck));
                         setShowEndScreen(false);
                         onClick(null);
                     }}>
@@ -53,13 +104,8 @@ export default function GameBoard({
 
 
     function checkClickedCard(id) {
-        if (!clickedCards[id]) {
-            setDeck(shuffleDeck);
-            setScore(() => score + 1);
-            const newClickedCards = [...clickedCards]
-            newClickedCards[id] = true;
-            setClickedCards(newClickedCards);
-        } else {
+
+        if (clickedCards.includes(id)) {
             log('already clicked that card; resetting')
             score > highScore ?
                 setHighScore(score)
@@ -67,14 +113,18 @@ export default function GameBoard({
             setScore(0);
             log('should bring up lose screen');
             setShowEndScreen(true);
+        } else {
+            setDeck(shuffleDeck(deck));
+            setScore(() => score + 1);
+            const newClickedCards = [...clickedCards]
+            newClickedCards.push(id);
+            setClickedCards(newClickedCards);
         }
     }
 
     function allCardsClicked() {
-        for (let i = 0; i < clickedCards.length; i++) {
-            if (!clickedCards[i]) return false
-        }
-        return true;
+        if (clickedCards.length === difficultyParameters[difficulty]) return true;
+        else return false;
     }
 
     if (allCardsClicked()) {
@@ -83,10 +133,6 @@ export default function GameBoard({
             <EndScreen outcome={'win'} />
         )
     }
-
-    log(`${difficulty} was selected for the difficulty,\nwe'll do something with that later`)
-
-
 
     return (
         <>
@@ -102,7 +148,7 @@ export default function GameBoard({
                                     id={index}
                                     imageURL={characters[index].url}
                                     cardTitle={characters[index].name}
-                                    clicked={clickedCards[index]}
+                                    clicked={clickedCards.includes(index)}
                                     onClick={(cardId) => { checkClickedCard(cardId); }
                                     } />
                             </>)

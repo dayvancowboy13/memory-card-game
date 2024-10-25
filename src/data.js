@@ -38,6 +38,26 @@ const characters = [{
     name: 'Tingle',
     url: 'src/assets/wind-waker-images/tingle.jpg'
 },
+{
+    id: 8,
+    name: 'King of Hyrule',
+    url: 'src/assets/wind-waker-images/king.jpg'
+},
+{
+    id: 9,
+    name: 'Zill',
+    url: 'src/assets/wind-waker-images/zill.jpg'
+},
+{
+    id: 10,
+    name: 'Medli',
+    url: 'src/assets/wind-waker-images/medli.jpg'
+},
+{
+    id: 11,
+    name: 'Komali',
+    url: 'src/assets/wind-waker-images/komali.jpg'
+},
 ];
 
 const loseGifs = [{
