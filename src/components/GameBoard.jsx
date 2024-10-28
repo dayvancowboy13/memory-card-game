@@ -28,33 +28,19 @@ const shuffleDeck = function (deck) {
     }
 
     return deck;
-    // let randomizedNumbers = [];
-    // let tempArray = [];
-
-    // for (let i = 0; i < characters.length; i++) {
-    //     tempArray.push(i);
-    // }
-
-    // randomizedNumbers = tempArray.map((a) => ({ sort: Math.random(), value: a }))
-    //     .sort((a, b) => a.sort - b.sort)
-    //     .map((a) => a.value);
-
-    // return (randomizedNumbers);
 }
 
 const loadDeck = function (numberOfCards) {
-    // generate x random numbers corresponding to the difficulty
-    log(`Pulling ${numberOfCards} into the deck`)
+    log(`Pulling ${numberOfCards} cards into the deck`)
 
     let indexArray = []
-    let i = characters.length;
-    let j = 0;
-    let temp;
-
-    // create array with enough indeces for all characters
     for (let k = 0; k < characters.length; k++) {
         indexArray.push(k);
     }
+
+    let i = characters.length;
+    let j = 0;
+    let temp;
 
     while (i--) {
         j = Math.floor(Math.random() * i);
@@ -74,11 +60,6 @@ export default function GameBoard({
     // an array of the indeces of cards which have been clicked
     const [clickedCards, setClickedCards] = useState([]);
     const [showEndScreen, setShowEndScreen] = useState(false);
-
-
-
-    log(deck)
-    log(clickedCards)
 
     function EndScreen({ outcome }) {
         return (
@@ -139,7 +120,7 @@ export default function GameBoard({
             {showEndScreen ? (
                 <EndScreen outcome={'lose'} />
             ) : (
-                <div className='board'>
+                <div className={`board ${difficulty}`}>
                     {deck.map((index) => {
                         return (
                             <>

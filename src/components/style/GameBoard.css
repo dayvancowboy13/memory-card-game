@@ -1,8 +1,8 @@
 .board {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
     grid-auto-columns: 1fr;
-    background-color: aliceblue;
+    background-color: var(--c-red);
     width: 85%;
     align-self: center;
 
@@ -14,6 +14,18 @@
 
     box-shadow: 0 0 10px;
 
+}
+
+.board.easy {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.board.medium {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.board.hard {
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .scores {

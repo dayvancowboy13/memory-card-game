@@ -1,9 +1,8 @@
 import './style/Card.css';
-// import { useState } from 'react';
 
 const log = console.log;
 
-export default function Card({ id, imageURL, cardTitle, clicked, onClick }) {
+export default function Card({ id, imageURL, cardTitle, onClick }) {
 
 
     function handleClick() {
@@ -16,11 +15,12 @@ export default function Card({ id, imageURL, cardTitle, clicked, onClick }) {
     return (
         <>
             <button key={id} className="card"
-                style={clicked ? { backgroundColor: 'green' } : { backgroundColor: 'red' }}
                 onClick={handleClick}>
 
                 <img className='card-image' src={imageURL} />
-                <h2>{id} {cardTitle}</h2>
+                <div className="card-text">
+                    <h2>{cardTitle}</h2>
+                </div>
             </button >
         </>
     )
