@@ -4,7 +4,7 @@ import { winGifs, loseGifs } from "../data"
 export default function GameOverImgage({ outcome }) {
     const refImg = useRef(null)
 
-    const apiKey = 'ulZf3B6FJ1EuL71iG33CtYZo3aElQkU5';
+    const shmorg = 'ulZf3B6FJ1EuL71iG33CtYZo3aElQkU5';
     let gifID;
 
     function getRandomIndex(array) {
@@ -17,7 +17,7 @@ export default function GameOverImgage({ outcome }) {
 
     console.log(gifID);
 
-    const giphyURL = `https://api.giphy.com/v1/gifs/${gifID}?api_key=${apiKey}`
+    const giphyURL = `https://api.giphy.com/v1/gifs/${gifID}?api_key=${shmorg}`
 
     useEffect(() => {
         async function runFetch() {
