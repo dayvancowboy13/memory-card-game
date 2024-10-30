@@ -2,7 +2,7 @@ export default function DifficultySelector({ onClick }) {
     return (
         <>
             <ul className='difficulty-selector'>
-                <h2>Choose your difficulty:</h2>
+                <h2>Choose difficulty:</h2>
                 <li className='difficulty list-item'>
                     <button
                         onClick={() => onClick("easy")}

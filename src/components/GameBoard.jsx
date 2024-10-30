@@ -65,9 +65,10 @@ export default function GameBoard({
         return (
             <div className={`${outcome}-screen`}>
 
-                <h2>You {`${outcome}`}!</h2>
+                <h2 className='end-message'>You {`${outcome}`}!</h2>
                 <GameOverImage outcome={outcome} />
                 <button
+                    className='play-again'
                     onClick={() => {
                         log('play again -- resetting game')
                         setHighScore(score)

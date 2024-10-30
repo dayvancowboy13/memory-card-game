@@ -21,9 +21,14 @@
 
 }
 
-.scores {
+.scores,
+.end-message {
   color: var(--c-orange);
   text-shadow: black 0 0 2px, rgb(232, 232, 232) 0 0 8px;
+}
+
+.end-message {
+  font-size: 30px;
 }
 
 .difficulty-selector {
@@ -33,7 +38,8 @@
   text-shadow: black 0 0 2px, rgb(230, 230, 230) 0 0 20px;
 }
 
-.list-item button {
+.list-item button,
+.play-again {
   margin: 6px;
   background-color: var(--c-orange);
   border: ridge hsl(42, 78%, 47%) 4px;
