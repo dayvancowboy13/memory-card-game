@@ -4,7 +4,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: var(--c-sat-green);
+  background-color: var(--c-gold);
   border-radius: var(--default-border-radius);
   box-shadow: 0 0 10px;
 
@@ -15,13 +15,30 @@
   display: grid;
 }
 
+#game-title {
+  color: var(--c-red);
+  text-shadow: hsl(0, 89%, 72%) 0 0 2px, rgb(220, 220, 220) 0 0 15px;
+
+}
+
+.scores {
+  color: var(--c-orange);
+  text-shadow: black 0 0 2px, rgb(232, 232, 232) 0 0 8px;
+}
+
 .difficulty-selector {
   list-style-type: none;
   padding: 0;
+  color: var(--c-orange);
+  text-shadow: black 0 0 2px, rgb(230, 230, 230) 0 0 20px;
 }
 
 .list-item button {
   margin: 6px;
+  background-color: var(--c-orange);
+  border: ridge hsl(42, 78%, 47%) 4px;
+  font-weight: 700;
+  font-size: larger;
 }
 
 

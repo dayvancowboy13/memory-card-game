@@ -4,11 +4,9 @@ const log = console.log;
 
 export default function Card({ id, imageURL, cardTitle, onClick }) {
 
-
     function handleClick() {
         log(`${cardTitle} clicked`);
         log('shuffling cards and updating states');
-
         onClick(id);
     }
 

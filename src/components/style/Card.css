@@ -7,17 +7,20 @@
     height: 260px;
     margin: 5px;
     padding: .85em;
-    background-color: var(--c-gold);
+    background-color: var(--c-orange);
+    box-shadow: 0 0 10px;
+    transition: ease-in-out 30ms;
+    animation: 550ms card-flip alternate-reverse;
+
+    border: ridge 4px hsl(42, 78%, 45%);
 
     border-radius: var(--default-border-radius);
 
     & h2 {
-
         padding: 0;
         margin-bottom: 0;
         margin-top: 0;
         font-size: 1.1em;
-        /* max-height: 10%; */
     }
 }
 
@@ -25,11 +28,26 @@
     max-width: 100%;
 }
 
+.card:hover {
+    box-shadow: white 0 0 13px;
+    scale: 104%;
+}
+
 .card-text {
     display: flex;
     flex: auto;
     align-items: center;
     container: cardtext;
+}
+
+@keyframes card-flip {
+    from {
+        transform: rotateY(0)
+    }
+
+    to {
+        transform: rotateY(90deg)
+    }
 }
 
 @container cardtext (max-height: 30px) {

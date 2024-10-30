@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div id='app'>
-      <h1>Wind Waker Memory Game!</h1>
+      <h1 id='game-title'>Wind Waker Memory Game</h1>
       {difficulty === null ?
         <DifficultySelector onClick={onClick} /> : (
           <>
