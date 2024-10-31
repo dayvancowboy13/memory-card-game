@@ -40,11 +40,13 @@
 
 .list-item button,
 .play-again {
+  box-sizing: border-box;
   margin: 6px;
   background-color: var(--c-orange);
   border: ridge hsl(42, 78%, 47%) 4px;
   font-weight: 700;
   font-size: larger;
+  color: white;
 }
 
 
