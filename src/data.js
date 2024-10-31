@@ -1,62 +1,62 @@
 const characters = [{
     id: 0,
     name: 'Link',
-    url: 'src/assets/wind-waker-images/link.jpg'
+    url: 'public/assets/wind-waker-images/link.jpg'
 },
 {
     id: 1,
     name: 'Aryll',
-    url: 'src/assets/wind-waker-images/aryll.jpg'
+    url: 'public/assets/wind-waker-images/aryll.jpg'
 },
 {
     id: 2,
     name: 'Tetra',
-    url: 'src/assets/wind-waker-images/tetra.jpg'
+    url: 'public/assets/wind-waker-images/tetra.jpg'
 },
 {
     id: 3,
     name: 'Zelda',
-    url: 'src/assets/wind-waker-images/zelda.jpg'
+    url: 'public/assets/wind-waker-images/zelda.jpg'
 },
 {
     id: 4,
     name: 'Manny',
-    url: 'src/assets/wind-waker-images/manny.jpg'
+    url: 'public/assets/wind-waker-images/manny.jpg'
 },
 {
     id: 5,
     name: 'Grandma',
-    url: 'src/assets/wind-waker-images/grandma.jpg'
+    url: 'public/assets/wind-waker-images/grandma.jpg'
 },
 {
     id: 6,
     name: 'Mokko',
-    url: 'src/assets/wind-waker-images/moko.jpg'
+    url: 'public/assets/wind-waker-images/moko.jpg'
 },
 {
     id: 7,
     name: 'Tingle',
-    url: 'src/assets/wind-waker-images/tingle.jpg'
+    url: 'public/assets/wind-waker-images/tingle.jpg'
 },
 {
     id: 8,
     name: 'King of Hyrule',
-    url: 'src/assets/wind-waker-images/king.jpg'
+    url: 'public/assets/wind-waker-images/king.jpg'
 },
 {
     id: 9,
     name: 'Zill',
-    url: 'src/assets/wind-waker-images/zill.jpg'
+    url: 'public/assets/wind-waker-images/zill.jpg'
 },
 {
     id: 10,
     name: 'Medli',
-    url: 'src/assets/wind-waker-images/medli.jpg'
+    url: 'public/assets/wind-waker-images/medli.jpg'
 },
 {
     id: 11,
     name: 'Komali',
-    url: 'src/assets/wind-waker-images/komali.jpg'
+    url: 'public/assets/wind-waker-images/komali.jpg'
 },
 ];
 
